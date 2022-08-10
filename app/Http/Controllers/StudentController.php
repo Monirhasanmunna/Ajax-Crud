@@ -65,4 +65,11 @@ class StudentController extends Controller
         return response()->json($data);
     }
 
+    public function destroy($id)
+    {
+        $data = Student::findOrFail($id)->delete();
+
+        return response()->json($data);
+    }
+
 }

@@ -23,3 +23,4 @@ Route::get('/all/student',[StudentController::class,'dataShow'])->name('data.sho
 Route::post('/store',[StudentController::class,'store'])->name('data.store');
 Route::get('/edit/{id}',[StudentController::class,'edit'])->name('data.edit');
 Route::post('/update/{id}',[StudentController::class,'update'])->name('data.update');
+Route::delete('/delete/{id}',[StudentController::class,'destroy'])->name('data.delete');

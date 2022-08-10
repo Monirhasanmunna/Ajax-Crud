@@ -123,7 +123,7 @@
                           data = data+"<td>"+value.contact+"</td>"
                           data = data+"<td>"
                           data = data+"<button class='btn btn-sm btn-primary m-1' data-toggle='modal' data-target='#studentform' onclick='editData("+value.id+")'>Edit</button>"
-                          data = data+"<button class='btn btn-sm btn-danger m-1'>Delete</button>"
+                          data = data+"<button class='btn btn-sm btn-danger m-1' onclick='deleteData("+value.id+")'>Delete</button>"
                           data = data+"</td>"
                         data = data+"</tr>"
 
@@ -220,6 +220,24 @@
               }
             });
           });
+        //data update Ends here
+
+        //data delete start here
+        function deleteData(id){
+            $.ajax({
+              url   : '/delete/'+id,
+              type  : 'Delete',
+              dataType  : 'json',
+              success   : function(response){
+                showData();
+                console.log('data deleted successfuly');
+              },
+              error   : function(error){
+                console.log(error);
+              }
+            });
+        }
+        //data delete Ends here
           
           
     </script>
