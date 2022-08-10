@@ -11,6 +11,12 @@
         .wrapper{
             margin-top: 50px;
         }
+
+        .hideClass{
+              popup: 'swal2-hide',
+              backdrop: 'swal2-backdrop-hide',
+              icon: 'swal2-icon-hide'
+              }
     </style>
 </head>
 <body>
@@ -76,6 +82,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <script>
       
@@ -158,6 +165,16 @@
                   success : function(response){
                     inputClear();
                     showData();
+                    Swal.fire({
+                        toast : true,
+                        width : '20em',
+                        timerProgressBar  : true,
+                        position: 'top-end',
+                        icon: 'success',
+                        title: 'Data Submit Successfully',
+                        showConfirmButton: false,
+                        timer: 3000,
+                      });
                   },
                   error : function(error){
                     $("#nameError").text(error.responseJSON.errors.name);
@@ -211,6 +228,16 @@
                 inputClear();
                 $("#updateBtn").hide();
                 $("#btn").show();
+                Swal.fire({
+                        toast : true,
+                        width : '20em',
+                        timerProgressBar  : true,
+                        position: 'top-end',
+                        icon: 'success',
+                        title: 'Data Updated Successfully',
+                        showConfirmButton: false,
+                        timer: 3000,
+                      });
 
               },
               error : function(error){
@@ -230,7 +257,16 @@
               dataType  : 'json',
               success   : function(response){
                 showData();
-                console.log('data deleted successfuly');
+                Swal.fire({
+                        toast : true,
+                        width : '20em',
+                        timerProgressBar  : true,
+                        position: 'top-end',
+                        icon: 'warning',
+                        title: 'Data Deleted Successfully',
+                        showConfirmButton: false,
+                        timer: 3000,
+                      });
               },
               error   : function(error){
                 console.log(error);
