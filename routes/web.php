@@ -21,3 +21,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/',[StudentController::class,'index']);
 Route::get('/all/student',[StudentController::class,'dataShow'])->name('data.show');
 Route::post('/store',[StudentController::class,'store'])->name('data.store');
+Route::get('/edit/{id}',[StudentController::class,'edit'])->name('data.edit');
+Route::post('/update/{id}',[StudentController::class,'update'])->name('data.update');
